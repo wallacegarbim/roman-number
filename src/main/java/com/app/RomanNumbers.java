@@ -15,21 +15,12 @@ public class RomanNumbers {
 
         int previousNumber = 0;
         int actualNumber = 0;
-        int loopTimes = 0;
         int result = 0;
 
-        for(String s : romanNumber.split("")){
-            loopTimes ++;
-
-            if (loopTimes >= 2){
-                previousNumber = actualNumber;
-                actualNumber = romanNumbersMap.get(s);
-            }else {
-                actualNumber = romanNumbersMap.get(s);
-            }
-
-            result = buildRomanNumber(previousNumber, actualNumber, result, s);
-
+        for(int i = 0; i < romanNumber.length(); i++){
+            previousNumber = actualNumber;
+            actualNumber = romanNumbersMap.get(String.valueOf(romanNumber.charAt(i)));
+            result = buildRomanNumber(previousNumber, actualNumber, result, String.valueOf(romanNumber.charAt(i)));
         }
         return result;
     }
