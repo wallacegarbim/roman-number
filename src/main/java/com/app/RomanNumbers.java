@@ -13,7 +13,7 @@ public class RomanNumbers {
 
     public int convert(String romanNumber) {
 
-        int previousNumber = 0;
+        int previousNumber;
         int actualNumber = 0;
         int result = 0;
 
